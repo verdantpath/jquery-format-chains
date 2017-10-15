@@ -16,16 +16,30 @@
 
 <script type="text/Javascript">
 (function($) {
-$(document).ready(function() {
-  $('#box').addClass('contentBox').children(':header')
-    .addClass('contentTitle').click(function() {
-      $(this).siblings('.contentBody').toggle();
-    }).end().children(':not(.contentTitle)')
-    .addClass('contentBody').end()
-    .append('<div class="contentFooter"></div>')
-    .children('.contentFooter').text('generated content');
-});
+// $(document).ready(function() {
+//   $('#box').addClass('contentBox').children(':header')
+//     .addClass('contentTitle').click(function() {
+//       $(this).siblings('.contentBody').toggle();
+//     }).end().children(':not(.contentTitle)')
+//     .addClass('contentBody').end()
+//     .append('<div class="contentFooter"></div>')
+//     .children('.contentFooter').text('generated content');
+// });
 
+$('#box')
+  .addClass('contentBox')
+  .children(':header')
+    .addClass('contentTitle')
+    .click(function() {
+      $(this).siblings('.contentBody').toggle();
+    })
+  .end()
+  .children(':not(.contentTitle)')
+    .addClass('contentBody')
+  .end()
+  .append('<div class="contentFooter"></div>')
+  .children('.contentFooter')
+    .text('generated content');
 
 })(jQuery);
 

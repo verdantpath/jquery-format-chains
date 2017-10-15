@@ -1,0 +1,34 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8" />
+<title>JQuery Format Chains</title>
+
+
+</head>
+<body>
+<div id="box">
+<h1>Title</h1>
+<div></div>
+</div>
+
+<script type="text/JavaScript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+
+<script type="text/Javascript">
+(function($) {
+$(document).ready(function() {
+  $('#box').addClass('contentBox').children(':header')
+    .addClass('contentTitle').click(function() {
+      $(this).siblings('.contentBody').toggle();
+    }).end().children(':not(.contentTitle)')
+    .addClass('contentBody').end()
+    .append('<div class="contentFooter"></div>')
+    .children('.contentFooter').text('generated content');
+});
+
+
+})(jQuery);
+
+</script>
+</body>
+</html>
